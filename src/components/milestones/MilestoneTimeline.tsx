@@ -8,7 +8,7 @@ import { format, formatDistanceToNow } from 'date-fns';
 
 const MilestoneTimeline = ({ milestones, onSelectMilestone }) => {
   const sortedMilestones = [...milestones].sort((a, b) => 
-    new Date(b.date) - new Date(a.date)
+    new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 
   const getCategoryColor = (category) => {

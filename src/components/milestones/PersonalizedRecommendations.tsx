@@ -14,7 +14,7 @@ const PersonalizedRecommendations = ({ milestones }) => {
     );
     
     if (firstUltrasound) {
-      const weeksAgo = Math.floor((Date.now() - new Date(firstUltrasound.date)) / (7 * 24 * 60 * 60 * 1000));
+      const weeksAgo = Math.floor((Date.now() - new Date(firstUltrasound.date).getTime()) / (7 * 24 * 60 * 60 * 1000));
       return Math.max(8 + weeksAgo, 8); // Assume first ultrasound at 8 weeks
     }
     
